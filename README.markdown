@@ -8,10 +8,10 @@ Then, be sure to include the plugin (example in haml):
 
 Here are the optional settings (displayed below are the defaults):
 
-  ajaxLoaderPath:'../images/ajax-loader.gif',
-  results:'.results',
-  objName:'',
-  callback:null
+* ajaxLoaderPath:'../images/ajax-loader.gif',
+* results:'.results',
+* objName:'',
+* callback:null
 
 ajaxLoaderPath is the path to your image which will be displayed while the ajax call is being made.
 results is the CSS selector that jQuery will use to append the results of the ajax call to.
