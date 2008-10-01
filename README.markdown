@@ -36,12 +36,11 @@ You may need to provide something like the following for Rails.
         xhr.setRequestHeader("Accept","text/javascript")} 
     });
 
-On the rails side of things, in your controller, just return the partial which iterates through your returned objects:
+In your Rails controller, just return the partial which iterates through your returned objects:
 
     def index
       @objects = Object.paginate :page => params[:page]
       respond_to do |format|
-        format.html
         #ajax response
         format.js { render :template => 'objects/_index_objects.html.haml'}
       end
@@ -53,4 +52,4 @@ and the partial:
       %li.result_row
         Your stuff here
 
-That's it.  Be sure to check out the plugin in its entirety on Github.  Feedback is always welcome.  Enjoy!
+Feedback is always welcome.  Enjoy!
