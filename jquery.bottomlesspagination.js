@@ -47,12 +47,14 @@
         );
         return false;
       }
-      //change the href
-      ind=settings.href.indexOf("page=");
-      page=parseInt(settings.href.charAt(ind+5))+1;
-      start=settings.href.slice(0,ind+5);
-      stop=settings.href.slice(ind+6);
-      settings.href=start.concat(page.toString()).concat(stop);
+
+      var pageRE     = /page=(\d+)/,
+          pageMatch  = settings.href.match(pageRE);
+
+      if (pageMatch) {
+        var pageNumber  = parseInt(pageMatch[1]) + 1;
+        settings.href = settings.href.replace(pageRE, 'page=' + pageNumber);
+      }
 
       //add results to the page
       $(settings.results).append(data);
