@@ -3,6 +3,7 @@ This fork of jquery-bottomless-pagination makes a number of changes from the ori
 2. The total page count is retrieved from the last numbered pagination link and is used to disable the 'More' link when the end of the set is reached (Previously the link was disabled when the ajax call returned no data, requiring an extra click to confirm the end of the set).
 3. When the end of the set is reached, the 'More' link turns into a 'Back to top' link.
 4. A span is added to the 'More' link with class 'icon'. Can be used to include an image, such as an arrow, in the pagination via CSS.
+5. Updated to work with will_paginate implementation that does not wrap the current page number in a span with class 'current'. Uses the 'next page' node instead.
 
 jquery-bottomless-pagination is a facebook-like jQuery plugin built on top of the Rails will_paginate plugin where results are returned and appended to the end of a list.
 
@@ -19,10 +20,13 @@ Here are the optional settings (displayed below are the defaults):
 * objName:'',
 * callback:null
 
-* ajaxLoaderPath is the path to your image which will be displayed while the ajax call is being made. If no path is specified ('' or null), 'Loading...' is displayed while the ajax call is being made.
-* results is the CSS selector that jQuery will use to append the results of the ajax call to.
-* objName is the name of the object that you would like displayed in the phrase "More [objName]". If not set, the pagination displays "More".
-* Callback is a function which you can provide to perform extra functions after the objects are appended, such as adding highlight or zebra effects.
+ajaxLoaderPath: the path to your image which will be displayed while the ajax call is being made. If no path is specified ('' or null), 'Loading...' is displayed while the ajax call is being made.
+
+results: the CSS selector that jQuery will use to append the results of the ajax call to.
+
+objName: the name of the object that you would like displayed in the phrase "More [objName]". If not set, the pagination displays "More".
+
+Callback: a function which you can provide to perform extra functions after the objects are appended, such as adding highlight or zebra effects.
 
 All of these settings can be provided similarly to the following:
 
