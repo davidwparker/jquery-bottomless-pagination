@@ -59,7 +59,7 @@
       // Replace live pagination if there are no more results, else update the href for the next page
       if (curr_page == settings.total_pages) {
         $('.live_pagination').remove();
-        $('.pagination_links').append('<div class="live_pagination back_to_top"><a class="top">Back to top &uarr;</a></div>');
+        $('.pagination_links').append('<div class="live_pagination back_to_top"><a href="#" class="top">Back to top &uarr;</a></div>');
         return false;
       } else {
         next_page = curr_page + 1;
