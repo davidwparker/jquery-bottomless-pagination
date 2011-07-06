@@ -1,9 +1,10 @@
 This fork of jquery-bottomless-pagination makes a number of changes from the original:
+
 1.  ajaxLoaderPath is optional. If not specified, a text 'Loading...' message is shown
-1.  The total page count is retrieved from the last numbered pagination link and is used to disable the 'More' link when the end of the set is reached (Previously the link was disabled when the ajax call returned no data, requiring an extra click to confirm the end of the set).
-1.  When the end of the set is reached, the 'More' link turns into a 'Back to top' link.
-1.  A span is added to the 'More' link with class 'icon'. Can be used to include an image, such as an arrow, in the pagination via CSS.
-1.  Updated to work with will_paginate implementation that does not wrap the current page number in a span with class 'current'. Uses the 'next page' node instead.
+2.  The total page count is retrieved from the last numbered pagination link and is used to disable the 'More' link when the end of the set is reached (Previously the link was disabled when the ajax call returned no data, requiring an extra click to confirm the end of the set).
+3.  When the end of the set is reached, the 'More' link turns into a 'Back to top' link.
+4.  A span is added to the 'More' link with class 'icon'. Can be used to include an image, such as an arrow, in the pagination via CSS.
+5.  Updated to work with will_paginate implementation that does not wrap the current page number in a span with class 'current'. Uses the 'next page' node instead.
 
 jquery-bottomless-pagination is a facebook-like jQuery plugin built on top of the Rails will_paginate plugin where results are returned and appended to the end of a list.
 
