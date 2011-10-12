@@ -71,8 +71,12 @@
     
     function getPageNumber(url) {
       pageRE = /page=(\d+)/;
-      pageMatch = url.match(pageRE);
-      return parseInt(pageMatch[1]);
+			if ( url ) {
+     		pageMatch = url.match(pageRE);
+	      return parseInt(pageMatch[1]);
+			} else {
+				return 1;
+			}
     };
     
   };
